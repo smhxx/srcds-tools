@@ -1,0 +1,35 @@
+{
+  "name": "srcds-tools",
+  "version": "0.1.0",
+  "author": "Ryan J Miller <captaintrek@gmail.com>",
+  "description": "A set of tools for interacting with Source Dedicated Server",
+  "scripts": {
+    "test": "make test",
+    "test-cov": "make test-cov"
+  },
+  "main": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RJMiller/srcds-tools.git"
+  },
+  "keywords": [
+    "srcds",
+    "source",
+    "source dedicated server",
+    "rcon",
+    "udp",
+    "log",
+    "tf2",
+    "team fortress 2"
+  ],
+  "devDependencies": {
+    "should": ">=1.2.0",
+    "mocha": ">=1.5.0",
+    "coffee-script": ">=1.3.3",
+    "visionmedia-jscoverage": ">=1.0.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
