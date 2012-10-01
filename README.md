@@ -2,7 +2,7 @@ srcds-tools
 ===
 A set of tools for interacting with [Source Dedicated Server](https://developer.valvesoftware.com/wiki/Source_Dedicated_Server) in [node.js](http://nodejs.org).
 
-Current version: v0.1.0
+Current version: v0.1.1
 
 ## Documentation
 
