@@ -19,9 +19,9 @@ rcon.connect("127.0.0.1", 27015);
 
 rcon.sendPassword("password123");
 
-rcon.sendCommand("sv_cheats 1", function () {
+rcon.sendCommand("sv_cheats 1", function (response) {
 
-	// Code to be executed after the command is executed
+	// Code to be executed when the server responds
 
 });
 ```
@@ -79,4 +79,6 @@ The `srcds-tools` module also provides a few utilites that can be used for debug
 
 `RConCLI.js` is a simple command-line implementation of `RConClient`. To use it, simply run the file with node.
 
-`node ./util/RConCLI.js`
+```
+node ./util/RConCLI.js
+```
