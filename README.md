@@ -55,9 +55,9 @@ rcon.sendPassword("dingbats", function () {
 Instructs the server to execute the specified `command`. The server's response will be passed to `callback` if it is specified. If the RCON password changes, `sendPassword()` will need to be called again or a `RConBadPasswordError` may be thrown.
 
 ```js
-rcon.sendCommand("_restart", function () {
+rcon.sendCommand("_restart", function (response) {
 
-	console.log("Server is restarting...");
+	console.log("Server says: " + response);
 
 });
 ```
