@@ -75,7 +75,7 @@ rcon.setTimeout(500);
 
 The `srcds-tools` module also provides a few utilites that can be used for debugging or independently of the module itself. They are located in the `util` directory.
 
-### RConREPL
+### RConCLI
 
 `RConCLI.js` is a simple command-line implementation of `RConClient`. To use it, simply run the file with node.
 

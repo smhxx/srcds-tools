@@ -17,7 +17,7 @@ function startConsole() {
 
 		process.stdin.on("data", function (data) {
 
-			rcon.sendCommand(data.toString(), getResponse);
+			rcon.sendCommand(data.toString().replace(/\n/g, ""), getResponse);
 
 		});
 
