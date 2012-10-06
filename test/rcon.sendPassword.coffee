@@ -40,9 +40,13 @@ describe 'RConClient.sendPassword(password, [callback])', ->
 
 	describe 'if authentication is successful', ->
 
-		it 'invokes the callback', (done)->
+		it 'invokes the callback with no parameters', (done)->
 
-			client.sendPassword(password, done);
+			client.sendPassword password, (error)->
+
+				should.equal error, undefined
+
+				done()
 
 			server.once 'request', (request)->
 
@@ -56,11 +60,15 @@ describe 'RConClient.sendPassword(password, [callback])', ->
 
 	describe 'if authentication fails', ->
 
-		it 'throws an RConBadPasswordError', (done)->
+		it 'passes an RConBadPasswordError to the callback', (done)->
 
-			mochaListener = process.listeners('uncaughtException').pop()
+			callback = (error) ->
 
-			client.sendPassword(password);
+				error.should.be.an.instanceOf RConBadPasswordError
+
+				done()
+
+			client.sendPassword(password, callback);
 
 			server.once 'request', (request)->
 
@@ -71,11 +79,3 @@ describe 'RConClient.sendPassword(password, [callback])', ->
 				}
 
 				server.sendResponse response
-
-			process.once 'uncaughtException', (error)->
-
-				process.listeners('uncaughtException').push(mochaListener)
-
-				error.should.be.an.instanceOf RConBadPasswordError
-
-				done()

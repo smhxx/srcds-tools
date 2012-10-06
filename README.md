@@ -2,7 +2,7 @@ srcds-tools
 ===
 A set of tools for interacting with [Source Dedicated Server](https://developer.valvesoftware.com/wiki/Source_Dedicated_Server) in [node.js](http://nodejs.org).
 
-Current version: v0.1.1
+Current version: v0.1.2
 
 ## Documentation
 
@@ -40,10 +40,12 @@ rcon.connect("127.0.0.1:27015");
 
 #### .sendPassword(password, [callback])
 
-Sends an authentication request to the server using the given `password`. If `RConClient` is able to authenticate successfully, `callback` is invoked. If the server rejects the password, an `RConBadPasswordError` is thrown (asynchronously). The `callback` is optional, but highly advised since sending multiple commands before authenticating successfully can result in an RCON ban from the server.
+Sends an authentication request to the server using the given `password`. If `RConClient` is able to authenticate successfully, `callback` is invoked. If the server rejects the password, an `RConBadPasswordError` is passed to the callback as the first parameter. The `callback` is optional, but highly advised since sending commands after a failed auth attempt can result in an RCON ban from the server.
 
 ```js
-rcon.sendPassword("dingbats", function () {
+rcon.sendPassword("dingbats", function (error) {
+
+	if (error) throw error;
 
 	console.log("Authenticated successfully!");
 

@@ -1,6 +1,6 @@
 {
   "name": "srcds-tools",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Ryan J Miller <captaintrek@gmail.com>",
   "description": "A set of tools for interacting with Source Dedicated Server",
   "scripts": {
