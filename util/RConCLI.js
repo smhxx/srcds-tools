@@ -11,7 +11,14 @@ function startConsole() {
 	process.stdin.listeners("data").pop();
 
 	rcon.connect(info[0], info[1]);
-	rcon.sendPassword(info[2], function() {
+	rcon.sendPassword(info[2], function(error) {
+
+		if (error) {
+
+			process.stdout.write("\nCouldn't connect to server: Bad RCON password.");
+			process.exit(1);
+
+		}
 
 		process.stdout.write(prompt);
 
