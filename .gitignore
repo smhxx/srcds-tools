@@ -3,4 +3,3 @@ coverage.html
 jshint/
 lib-cov/
 node_modules/
-*.bat

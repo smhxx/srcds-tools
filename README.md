@@ -2,7 +2,7 @@ srcds-tools
 ===
 A set of tools for interacting with [Source Dedicated Server](https://developer.valvesoftware.com/wiki/Source_Dedicated_Server) in [node.js](http://nodejs.org).
 
-Current version: v0.1.2
+Current version: v0.2.0
 
 ## Documentation
 
@@ -25,6 +25,10 @@ rcon.sendCommand("sv_cheats 1", function (response) {
 
 });
 ```
+
+### .verbose
+
+A boolean which, if set to `true`, causes the `RConClient` to output debug information to `console.log()`.
 
 #### .connect(address, port)
 
