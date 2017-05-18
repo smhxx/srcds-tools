@@ -1,4 +1,4 @@
-MOCHA_OPTS = --require should --compilers coffee:coffee-script --colors
+MOCHA_OPTS = --require should --compilers coffee:coffee-script/register --colors
 REPORTER = dot
 
 test: test-unit
