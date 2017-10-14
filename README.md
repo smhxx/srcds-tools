@@ -1,5 +1,7 @@
 srcds-tools
 ===
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 A set of tools for interacting with [Source Dedicated Server](https://developer.valvesoftware.com/wiki/Source_Dedicated_Server) in [node.js](http://nodejs.org).
 
 Current version: v0.2.0
